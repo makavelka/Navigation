@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="ru.tebloev.navigation.Fragment1"
+        android:label="fragment_fragment1"
+        tools:layout="@layout/fragment_fragment1" >
+        <action
+            android:id="@+id/action_fragment1_to_fragment2"
+            app:destination="@id/fragment2" />
+
+
+        <action
+            android:id="@+id/action_fragment1_to_newActivity"
+            app:destination="@id/newActivity"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="ru.tebloev.navigation.Fragment2"
+        android:label="Fragment2">
+        <action
+            android:id="@+id/action_fragment2_to_fragment3"
+            app:destination="@id/fragment3" />
+        <argument
+            android:name="arg1"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue='""' />
+        <argument
+            android:name="arg2"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="arg3"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="ru.tebloev.navigation.Fragment3"
+        android:label="Fragment3" >
+        <action
+            android:id="@+id/action_fragment3_to_fragment4"
+            app:destination="@id/fragment4" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="ru.tebloev.navigation.Fragment4"
+        android:label="Fragment4" >
+        <action
+            android:id="@+id/action_fragment4_to_fragment1"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <activity
+        android:id="@+id/newActivity"
+        android:name="ru.tebloev.navigation.NewActivity"
+        android:label="activity_new"
+        tools:layout="@layout/activity_new" />
+</navigation>
